@@ -1,0 +1,9 @@
+{
+    "build": {
+        "env": {},
+        "cmd": "pip install -r requirements.txt"
+    },
+    "start": {
+        "cmd": "python odp_telegram_bot_enhanced.py"
+    }
+}
