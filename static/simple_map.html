@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Map Viewer</title>
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        
+        #map-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #map-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        #error-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            max-width: 80%;
+            display: none;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 5px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .btn-secondary {
+            background-color: #607D8B;
+        }
+        
+        #instructions {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            z-index: 500;
+            max-width: 300px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">
+        <div class="spinner"></div>
+        <p>Memuat peta...</p>
+    </div>
+    
+    <div id="error-container">
+        <h3>Error Memuat Peta</h3>
+        <p id="error-message">Tidak dapat memuat peta. Silakan coba metode lain.</p>
+        <div>
+            <a href="#" class="btn" id="retry-btn">Coba Lagi</a>
+            <a href="#" class="btn btn-secondary" id="download-btn">Download Peta</a>
+        </div>
+    </div>
+    
+    <div id="map-container">
+        <!-- Map will be loaded here -->
+    </div>
+    
+    <div id="instructions">
+        <p><strong>Tip:</strong> Jika peta tidak muncul, Anda dapat mengunduh file peta melalui tombol "Download Peta" untuk melihatnya secara offline.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get map ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const mapId = urlParams.get('id');
+            
+            if (!mapId) {
+                showError('ID peta tidak ditemukan di URL. Silakan kembali ke halaman pencarian.');
+                return;
+            }
+            
+            // Set up download button
+            document.getElementById('download-btn').href = '/download_map?id=' + mapId;
+            
+            // Set up retry button
+            document.getElementById('retry-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                loadMap(mapId);
+            });
+            
+            // Load the map directly
+            loadMap(mapId);
+            
+            function loadMap(id) {
+                // Hide error if visible
+                document.getElementById('error-container').style.display = 'none';
+                // Show loading
+                document.getElementById('loading').style.display = 'block';
+                
+                // Fetch the map content
+                fetch('/maps/' + id)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Peta tidak ditemukan');
+                        }
+                        return response.text();
+                    })
+                    .then(html => {
+                        // Create container for the map
+                        const mapContainer = document.getElementById('map-container');
+                        
+                        // Insert map content directly into the page
+                        mapContainer.innerHTML = extractMapContent(html);
+                        
+                        // Hide loading indicator
+                        document.getElementById('loading').style.display = 'none';
+                    })
+                    .catch(error => {
+                        showError('Terjadi kesalahan saat memuat peta: ' + error.message);
+                    });
+            }
+            
+            function extractMapContent(html) {
+                // Extract the map content from the folium HTML
+                try {
+                    // Try to extract just the map part
+                    const mapMatch = html.match(/<div class="folium-map[^>]*>([\s\S]*)<\/script>\s*<\/div>/i);
+                    if (mapMatch && mapMatch[0]) {
+                        return mapMatch[0];
+                    }
+                    
+                    // If that doesn't work, look for the body content
+                    const bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+                    if (bodyMatch && bodyMatch[1]) {
+                        return bodyMatch[1];
+                    }
+                    
+                    // Fallback: just return the whole HTML but add necessary CSS
+                    return `<style>
+                        body, html {
+                            padding: 0;
+                            margin: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .folium-map {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    </style>` + html;
+                    
+                } catch (e) {
+                    console.error("Error extracting map content:", e);
+                    
+                    // Last resort: create an iframe
+                    return `<iframe src="/maps/${mapId}" id="map-frame" allowfullscreen></iframe>`;
+                }
+            }
+            
+            function showError(message) {
+                document.getElementById('error-message').textContent = message;
+                document.getElementById('error-container').style.display = 'block';
+                document.getElementById('loading').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

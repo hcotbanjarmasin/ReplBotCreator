@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Pencarian ODP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        .endpoint {
+            background-color: #f8f9fa;
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 4px 4px 0;
+        }
+        .params {
+            margin-top: 10px;
+        }
+        .param {
+            margin: 5px 0;
+        }
+        .param-name {
+            font-weight: bold;
+        }
+        .param-default {
+            color: #666;
+        }
+        .example {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+        .example a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .example a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>API Pencarian ODP</h1>
+    <p>API sederhana untuk mencari ODP (Optical Distribution Point) berdasarkan koordinat.</p>
+    
+    <div class="endpoint">
+        <h2>Endpoint: <code>/search_odp</code></h2>
+        <p>Mencari ODP dalam radius tertentu dari suatu koordinat dan mengembalikan hasilnya sebagai gambar PNG.</p>
+        
+        <div class="params">
+            <h3>Parameter:</h3>
+            <div class="param">
+                <span class="param-name">lat</span>: Latitude (required) 
+                <span class="param-default">(default: -3.292481)</span>
+            </div>
+            <div class="param">
+                <span class="param-name">lng</span>: Longitude (required)
+                <span class="param-default">(default: 114.592482)</span>
+            </div>
+            <div class="param">
+                <span class="param-name">radius</span>: Radius pencarian dalam meter
+                <span class="param-default">(default: 500)</span>
+            </div>
+            <div class="param">
+                <span class="param-name">coords</span>: Tampilkan koordinat (true/false)
+                <span class="param-default">(default: true)</span>
+            </div>
+            <div class="param">
+                <span class="param-name">name</span>: Tampilkan nama ODP (true/false)
+                <span class="param-default">(default: true)</span>
+            </div>
+            <div class="param">
+                <span class="param-name">max</span>: Maksimal ODP yang ditampilkan
+                <span class="param-default">(default: 50)</span>
+            </div>
+            <div class="param">
+                <span class="param-name">json</span>: Kembalikan hasil dalam format JSON (true/false)
+                <span class="param-default">(default: false)</span>
+            </div>
+        </div>
+        
+        <div class="example">
+            <h3>Contoh:</h3>
+            <div>
+                <a href="/search_odp?lat=-3.292481&lng=114.592482&radius=100" target="_blank">
+                    /search_odp?lat=-3.292481&lng=114.592482&radius=100
+                </a>
+                <p>Mencari ODP dalam radius 100m dari koordinat -3.292481, 114.592482.</p>
+            </div>
+            <div>
+                <a href="/search_odp?lat=-3.3219&lng=114.6034&radius=1500&max=100" target="_blank">
+                    /search_odp?lat=-3.3219&lng=114.6034&radius=1500&max=100
+                </a>
+                <p>Mencari ODP dalam radius 1500m dan menampilkan maksimal 100 ODP.</p>
+            </div>
+            <div>
+                <a href="/search_odp?lat=-3.8159&lng=114.7505&radius=500&coords=false" target="_blank">
+                    /search_odp?lat=-3.8159&lng=114.7505&radius=500&coords=false
+                </a>
+                <p>Mencari ODP dalam radius 500m tanpa menampilkan koordinat.</p>
+            </div>
+            <div>
+                <a href="/search_odp?lat=-3.292481&lng=114.592482&radius=100&json=true" target="_blank">
+                    /search_odp?lat=-3.292481&lng=114.592482&radius=100&json=true
+                </a>
+                <p>Mencari ODP dalam radius 100m dan mengembalikan hasil dalam format JSON.</p>
+            </div>
+        </div>
+    </div>
+    
+    <h2>Aplikasi Web</h2>
+    <p>Untuk antarmuka web yang lebih ramah pengguna, silakan gunakan:</p>
+    <ul>
+        <li><a href="/direct">Pencarian ODP Langsung</a> - Antarmuka web sederhana untuk mencari ODP</li>
+        <li><a href="/image">Hasil Pencarian Terbaru</a> - Menampilkan gambar hasil pencarian terbaru</li>
+    </ul>
+</body>
+</html>

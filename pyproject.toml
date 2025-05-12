@@ -1,0 +1,24 @@
+[project]
+name = "repl-nix-workspace"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.11"
+dependencies = [
+    "contextily>=1.6.2",
+    "flask>=3.1.0",
+    "folium>=0.19.5",
+    "geopy>=2.4.1",
+    "gspread>=6.2.0",
+    "matplotlib>=3.10.3",
+    "numpy>=2.2.5",
+    "oauth2client>=4.1.3",
+    "openrouteservice>=2.3.3",
+    "pandas>=2.2.3",
+    "pillow>=11.2.1",
+    "psutil>=7.0.0",
+    "pytelegrambotapi>=4.27.0",
+    "python-telegram-bot>=22.0",
+    "requests>=2.32.3",
+    "telegram>=0.0.1",
+    "watchdog>=6.0.0",
+]

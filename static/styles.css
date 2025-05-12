@@ -1,0 +1,206 @@
+/* Main Styles */
+:root {
+  --primary-color: #0097e8;
+  --secondary-color: #6c757d;
+  --accent-color: #f8ae1a;
+  --dark-color: #212529;
+  --light-color: #f8f9fa;
+  --success-color: #28a745;
+  --info-color: #17a2b8;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #343a40;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: var(--dark-color);
+  color: white;
+  padding: 4rem 0;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+/* Features Section */
+.feature-icon {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon i {
+  width: 2rem;
+  height: 2rem;
+  color: var(--primary-color);
+}
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.icon-link i {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.25rem;
+}
+
+/* Card Styles */
+.card {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-title .feather-icon {
+  margin-right: 0.5rem;
+}
+
+/* Language Section Styles */
+.language-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.language-popularity {
+  margin-top: 1rem;
+}
+
+/* Code Snippet Styling */
+.code-snippet {
+  background-color: #282c34;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+}
+
+.code-snippet pre {
+  margin-bottom: 0;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  overflow-x: auto;
+}
+
+.code-snippet code {
+  color: #e6e6e6;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.9rem;
+}
+
+/* Feather Icon styling */
+.feather-icon {
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: text-bottom;
+}
+
+/* Tab Content Styles */
+.tab-content {
+  background-color: white;
+}
+
+/* Footer styling */
+footer {
+  margin-top: 3rem;
+}
+
+footer a {
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 0;
+  }
+  
+  .language-section .row {
+    flex-direction: column;
+  }
+  
+  .features-section .col {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Bot Types Page */
+.bot-type-card {
+  height: 100%;
+}
+
+/* Additional utility classes */
+.mb-6 {
+  margin-bottom: 4rem;
+}
+
+.mt-6 {
+  margin-top: 4rem;
+}
+
+/* Feature Icons */
+.features-section .feature-icon {
+  background-color: #e9ecef;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* Custom Alert Styling */
+.alert {
+  border-radius: 0.375rem;
+}
+
+.alert i {
+  margin-right: 0.5rem;
+}
+
+/* Getting Started Section */
+.getting-started .card {
+  height: 100%;
+}
+
+/* Examples Page */
+.tab-pane {
+  padding: 1.5rem;
+}
+
+.nav-tabs .nav-link {
+  color: var(--dark-color);
+}
+
+.nav-tabs .nav-link.active {
+  font-weight: 600;
+}

@@ -1,0 +1,780 @@
+2025-05-10 08:24:07,625 - KeepAliveBot - INFO - Menjalankan Bot Telegram ODP...
+2025-05-10 08:25:57,467 - KeepAliveBot - INFO - Menerima sinyal untuk keluar, menghentikan bot dengan rapi...
+2025-05-10 08:25:57,813 - KeepAliveBot - INFO - Menjalankan Bot Telegram ODP...
+2025-05-10 08:26:19,869 - KeepAliveBot - INFO - Menerima sinyal untuk keluar, menghentikan bot dengan rapi...
+2025-05-10 08:26:20,404 - KeepAliveBot - INFO - Menjalankan Bot Telegram ODP...
+2025-05-10 08:28:45,942 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-10 08:28:45,959 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.73:8080
+2025-05-10 08:28:45,960 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 08:28:55,913 - KeepAliveBot - INFO - Menerima sinyal untuk keluar, menghentikan bot dengan rapi...
+2025-05-10 08:30:28,847 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-10 08:30:28,877 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.22:8080
+2025-05-10 08:30:28,877 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 10:33:45,182 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-10 10:33:45,206 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.48:8080
+2025-05-10 10:33:45,206 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 10:35:16,676 - KeepAliveServer - INFO - Menerima sinyal untuk keluar, menghentikan bot dengan rapi...
+2025-05-10 10:35:17,185 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-10 10:35:17,190 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-10 10:35:17,204 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.48:8080
+2025-05-10 10:35:17,206 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 10:37:14,628 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 10:37:14] "GET /ping HTTP/1.1" 200 -
+2025-05-10 10:37:17,198 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 10:37:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 10:37:17,199 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 10:37:21,139 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 10:37:21] "GET /status HTTP/1.1" 200 -
+2025-05-10 10:39:17,202 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 10:39:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 10:39:17,205 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 10:41:17,207 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 10:41:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 10:41:17,210 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 10:43:17,218 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 10:43:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 10:43:17,221 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 10:45:17,223 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 10:45:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 10:45:17,225 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 10:47:17,228 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 10:47:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 10:47:17,230 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 10:49:17,232 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 10:49:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 10:49:17,233 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 10:51:17,235 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 10:51:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 10:51:17,235 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 10:53:17,237 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 10:53:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 10:53:17,238 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 10:55:17,240 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 10:55:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 10:55:17,241 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 10:57:17,243 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 10:57:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 10:57:17,244 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 10:59:17,246 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 10:59:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 10:59:17,247 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:01:17,250 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:01:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:01:17,252 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:03:17,255 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:03:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:03:17,256 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:05:17,258 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:05:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:05:17,259 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:07:17,261 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:07:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:07:17,262 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:09:17,264 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:09:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:09:17,264 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:11:17,267 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:11:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:11:17,268 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:13:17,270 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:13:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:13:17,271 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:15:17,274 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:15:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:15:17,275 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:17:17,277 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:17:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:17:17,279 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:19:17,281 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:19:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:19:17,284 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:21:17,289 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:21:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:21:17,290 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:23:17,293 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:23:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:23:17,294 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:25:17,295 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:25:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:25:17,297 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:27:17,299 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:27:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:27:17,300 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:29:17,303 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:29:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:29:17,304 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:31:17,307 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:31:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:31:17,308 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:33:17,310 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:33:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:33:17,311 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:35:17,313 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:35:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:35:17,314 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:37:17,316 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:37:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:37:17,317 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:39:17,319 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:39:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:39:17,320 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:41:17,322 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:41:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:41:17,323 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:43:17,325 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:43:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:43:17,325 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:45:17,328 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:45:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:45:17,330 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:47:17,332 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:47:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:47:17,333 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:49:17,335 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:49:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:49:17,336 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:51:17,338 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:51:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:51:17,339 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:53:17,341 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:53:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:53:17,342 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:55:17,345 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:55:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:55:17,347 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:57:17,349 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:57:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:57:17,350 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 11:59:17,352 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 11:59:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 11:59:17,353 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:01:17,355 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:01:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:01:17,358 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:03:17,361 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:03:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:03:17,362 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:05:17,364 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:05:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:05:17,365 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:07:17,367 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:07:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:07:17,369 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:09:17,371 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:09:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:09:17,371 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:11:17,374 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:11:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:11:17,374 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:13:17,377 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:13:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:13:17,379 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:15:17,381 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:15:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:15:17,382 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:17:17,384 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:17:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:17:17,385 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:19:17,387 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:19:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:19:17,388 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:21:17,390 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:21:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:21:17,391 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:23:17,393 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:23:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:23:17,394 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:25:17,397 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:25:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:25:17,398 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:27:17,400 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:27:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:27:17,400 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:29:17,402 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:29:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:29:17,403 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:31:17,406 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:31:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:31:17,406 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:33:17,408 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:33:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:33:17,409 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:35:17,411 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:35:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:35:17,412 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:37:17,414 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:37:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:37:17,415 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:39:17,417 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:39:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:39:17,418 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:41:17,420 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:41:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:41:17,421 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:43:17,423 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:43:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:43:17,424 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:45:17,426 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:45:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:45:17,428 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:47:17,430 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:47:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:47:17,431 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:49:17,433 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:49:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:49:17,433 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:51:17,436 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:51:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:51:17,437 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:53:17,439 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:53:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:53:17,440 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:55:17,446 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:55:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:55:17,447 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:57:17,449 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:57:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:57:17,450 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 12:59:17,452 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:59:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 12:59:17,454 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:01:17,456 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:01:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:01:17,457 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:03:17,459 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:03:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:03:17,460 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:05:17,462 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:05:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:05:17,464 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:07:17,466 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:07:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:07:17,467 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:09:17,468 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:09:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:09:17,470 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:11:17,471 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:11:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:11:17,472 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:13:17,474 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:13:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:13:17,476 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:15:17,478 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:15:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:15:17,479 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:17:17,481 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:17:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:17:17,482 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:19:17,485 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:19:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:19:17,487 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:21:17,493 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:21:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:21:17,497 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:23:17,500 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:23:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:23:17,502 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:25:17,504 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:25:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:25:17,505 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:27:17,507 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:27:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:27:17,508 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:29:17,511 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:29:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:29:17,512 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:31:17,513 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:31:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:31:17,514 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:33:17,516 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:33:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:33:17,517 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:35:17,519 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:35:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:35:17,520 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:37:17,523 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:37:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:37:17,525 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:39:17,528 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:39:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:39:17,529 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:41:17,531 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:41:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:41:17,532 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:43:17,533 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:43:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:43:17,535 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:45:17,537 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:45:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:45:17,538 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:47:17,541 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:47:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:47:17,541 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:49:17,543 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:49:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:49:17,544 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:51:17,548 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:51:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:51:17,549 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:53:17,551 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:53:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:53:17,552 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:55:17,554 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:55:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:55:17,556 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:57:17,558 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:57:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:57:17,560 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 13:59:17,562 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:59:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 13:59:17,563 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:01:17,565 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:01:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:01:17,566 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:03:17,568 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:03:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:03:17,569 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:05:17,571 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:05:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:05:17,572 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:07:17,574 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:07:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:07:17,575 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:09:17,578 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:09:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:09:17,579 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:11:17,581 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:11:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:11:17,582 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:13:17,584 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:13:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:13:17,585 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:15:17,587 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:15:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:15:17,589 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:17:17,592 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:17:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:17:17,592 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:19:17,594 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:19:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:19:17,595 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:21:17,597 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:21:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:21:17,598 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:23:17,602 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:23:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:23:17,604 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:25:17,606 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:25:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:25:17,607 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:27:17,608 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:27:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:27:17,609 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:29:17,611 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:29:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:29:17,612 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:31:17,614 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:31:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:31:17,615 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:33:17,617 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:33:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:33:17,618 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:35:17,626 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:35:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:35:17,627 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:37:17,630 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:37:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:37:17,631 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:39:17,633 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:39:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:39:17,634 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:41:17,636 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:41:17] "GET /ping HTTP/1.1" 200 -
+2025-05-10 14:41:17,637 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 14:59:30,801 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-10 14:59:30,808 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-10 14:59:31,034 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.29:8080
+2025-05-10 14:59:31,034 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 15:01:30,814 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:01:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:01:30,817 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:03:30,819 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:03:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:03:30,820 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:05:30,824 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:05:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:05:30,831 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:07:30,838 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:07:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:07:30,839 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:09:30,842 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:09:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:09:30,844 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:11:30,846 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:11:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:11:30,847 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:13:30,849 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:13:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:13:30,850 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:15:30,853 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:15:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:15:30,854 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:17:30,856 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:17:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:17:30,857 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:19:30,859 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:19:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:19:30,860 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:21:30,862 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:21:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:21:30,863 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:23:30,865 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:23:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:23:30,866 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:25:30,869 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:25:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:25:30,870 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:27:30,872 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:27:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:27:30,873 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:29:30,876 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:29:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:29:30,877 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:31:30,879 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:31:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:31:30,880 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:33:30,882 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:33:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:33:30,884 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:35:30,886 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:35:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:35:30,887 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:37:30,889 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:37:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:37:30,891 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:39:30,893 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:39:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:39:30,893 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:41:30,896 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:41:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:41:30,897 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:43:30,898 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:43:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:43:30,899 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:45:30,902 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:45:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:45:30,903 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:47:30,906 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:47:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:47:30,907 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:49:30,909 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:49:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:49:30,911 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:51:30,913 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:51:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:51:30,914 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:53:30,916 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:53:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:53:30,917 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:55:30,919 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:55:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:55:30,920 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:57:30,922 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:57:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:57:30,923 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 15:59:30,925 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:59:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 15:59:30,926 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 16:01:30,929 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 16:01:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 16:01:30,929 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 16:03:30,931 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 16:03:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 16:03:30,934 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 16:05:30,936 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 16:05:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 16:05:30,937 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 16:07:30,945 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 16:07:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 16:07:30,946 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 16:09:30,948 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 16:09:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 16:09:30,949 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 16:11:30,951 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 16:11:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 16:11:30,952 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 16:13:30,954 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 16:13:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 16:13:30,955 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 16:15:30,957 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 16:15:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 16:15:30,958 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 16:17:30,961 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 16:17:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 16:17:30,961 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 16:19:30,963 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 16:19:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 16:19:30,964 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 16:21:30,967 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 16:21:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 16:21:30,968 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 16:23:30,970 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 16:23:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 16:23:30,971 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 16:25:30,974 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 16:25:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 16:25:30,974 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 16:27:30,977 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 16:27:30] "GET /ping HTTP/1.1" 200 -
+2025-05-10 16:27:30,978 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 16:32:17,587 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-10 16:32:17,614 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-10 16:32:17,926 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.35:8080
+2025-05-10 16:32:17,927 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 16:33:39,413 - KeepAliveServer - INFO - Menerima sinyal untuk keluar, menghentikan bot dengan rapi...
+2025-05-10 16:33:42,884 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-10 16:33:42,891 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-10 16:33:42,936 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.35:8080
+2025-05-10 16:33:42,936 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 16:36:07,475 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-10 16:36:07,481 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-10 16:36:07,658 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.19:8080
+2025-05-10 16:36:07,658 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 16:36:09,334 - werkzeug - INFO - 172.31.128.19 - - [10/May/2025 16:36:09] "GET / HTTP/1.1" 200 -
+2025-05-10 16:36:09,404 - werkzeug - INFO - 172.31.128.19 - - [10/May/2025 16:36:09] "GET / HTTP/1.1" 200 -
+2025-05-10 16:38:07,488 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 16:38:07] "GET /ping HTTP/1.1" 200 -
+2025-05-10 16:38:07,490 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 16:38:36,622 - werkzeug - INFO - 172.31.128.19 - - [10/May/2025 16:38:36] "GET / HTTP/1.1" 200 -
+2025-05-10 16:40:07,492 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 16:40:07] "GET /ping HTTP/1.1" 200 -
+2025-05-10 16:40:07,493 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 17:04:23,734 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-10 17:04:23,740 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-10 17:04:24,015 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.7:8080
+2025-05-10 17:04:24,015 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 17:09:55,749 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-10 17:09:55,757 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-10 17:09:55,898 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.74:8080
+2025-05-10 17:09:55,898 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 17:11:55,764 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 17:11:55] "GET /ping HTTP/1.1" 200 -
+2025-05-10 17:11:55,765 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 17:13:18,281 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-10 17:13:18,288 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-10 17:13:18,941 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.12:8080
+2025-05-10 17:13:18,941 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 17:13:20,586 - werkzeug - INFO - 172.31.128.12 - - [10/May/2025 17:13:20] "GET / HTTP/1.1" 200 -
+2025-05-10 17:15:18,293 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 17:15:18] "GET /ping HTTP/1.1" 200 -
+2025-05-10 17:15:18,294 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 17:17:18,297 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 17:17:18] "GET /ping HTTP/1.1" 200 -
+2025-05-10 17:17:18,297 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 17:17:26,779 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-10 17:19:18,299 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 17:19:18] "GET /ping HTTP/1.1" 200 -
+2025-05-10 17:19:18,301 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-10 17:27:18,566 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-10 17:27:18,571 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-10 17:27:18,773 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.30:8080
+2025-05-10 17:27:18,773 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 17:27:20,387 - werkzeug - INFO - 172.31.128.30 - - [10/May/2025 17:27:20] "GET / HTTP/1.1" 200 -
+2025-05-10 17:27:20,412 - werkzeug - INFO - 172.31.128.30 - - [10/May/2025 17:27:20] "GET / HTTP/1.1" 200 -
+2025-05-10 17:29:18,576 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 17:29:18] "GET /ping HTTP/1.1" 200 -
+2025-05-10 17:29:18,577 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 00:38:32,460 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 00:38:32,465 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 00:38:32,713 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.13:8080
+2025-05-11 00:38:32,713 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 00:38:34,463 - werkzeug - INFO - 172.31.128.13 - - [11/May/2025 00:38:34] "GET / HTTP/1.1" 200 -
+2025-05-11 00:38:34,526 - werkzeug - INFO - 172.31.128.13 - - [11/May/2025 00:38:34] "GET / HTTP/1.1" 200 -
+2025-05-11 00:40:32,470 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 00:40:32] "GET /ping HTTP/1.1" 200 -
+2025-05-11 00:40:32,471 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 00:41:06,117 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 00:41:06] "GET / HTTP/1.1" 200 -
+2025-05-11 00:42:32,474 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 00:42:32] "GET /ping HTTP/1.1" 200 -
+2025-05-11 00:42:32,477 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 00:44:32,483 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 00:44:32] "GET /ping HTTP/1.1" 200 -
+2025-05-11 00:44:32,484 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 00:46:32,486 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 00:46:32] "GET /ping HTTP/1.1" 200 -
+2025-05-11 00:46:32,486 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 00:48:32,489 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 00:48:32] "GET /ping HTTP/1.1" 200 -
+2025-05-11 00:48:32,490 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 00:51:56,964 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 00:51:56,973 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 00:51:57,209 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.19:8080
+2025-05-11 00:51:57,209 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 00:52:08,653 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 00:52:08] "GET /ping HTTP/1.1" 200 -
+2025-05-11 00:52:34,111 - KeepAliveServer - INFO - Menerima sinyal untuk keluar, menghentikan bot dengan rapi...
+2025-05-11 00:52:34,789 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 00:52:34,805 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 00:52:34,816 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.19:8080
+2025-05-11 00:52:34,817 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 00:54:34,819 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 00:54:34] "GET /ping HTTP/1.1" 200 -
+2025-05-11 00:54:34,822 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 00:54:45,798 - KeepAliveServer - INFO - Menerima sinyal untuk keluar, menghentikan bot dengan rapi...
+2025-05-11 00:54:46,466 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 00:54:46,471 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 00:54:46,487 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.19:8080
+2025-05-11 00:54:46,489 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 00:55:35,843 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 00:55:35] "GET / HTTP/1.1" 200 -
+2025-05-11 00:55:39,221 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 00:55:39] "GET / HTTP/1.1" 200 -
+2025-05-11 00:56:01,350 - KeepAliveServer - INFO - Menerima sinyal untuk keluar, menghentikan bot dengan rapi...
+2025-05-11 00:56:01,938 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 00:56:01,944 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 00:56:01,954 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.19:8080
+2025-05-11 00:56:01,954 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 00:56:28,980 - KeepAliveServer - INFO - Menerima sinyal untuk keluar, menghentikan bot dengan rapi...
+2025-05-11 00:56:29,510 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 00:56:53,486 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 00:56:53,492 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 00:56:53,506 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.19:8080
+2025-05-11 00:56:53,507 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 00:56:57,585 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 00:56:57] "GET /ping HTTP/1.1" 200 -
+2025-05-11 00:58:53,503 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 00:58:53] "GET /ping HTTP/1.1" 200 -
+2025-05-11 00:58:53,504 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:00:53,507 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:00:53] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:00:53,508 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:02:53,511 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:02:53] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:02:53,512 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:04:53,515 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:04:53] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:04:53,516 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:06:53,519 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:06:53] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:06:53,520 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:10:30,495 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 01:10:30,504 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 01:10:30,710 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.54:8080
+2025-05-11 01:10:30,710 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 01:12:30,510 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:12:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:12:30,511 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:13:15,778 - KeepAliveServer - INFO - Menerima sinyal untuk keluar, menghentikan bot dengan rapi...
+2025-05-11 01:13:16,349 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 01:13:16,357 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 01:13:16,369 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.54:8080
+2025-05-11 01:13:16,369 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 01:20:13,544 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 01:20:13,551 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 01:20:13,692 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.16:8080
+2025-05-11 01:20:13,692 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 01:20:29,053 - werkzeug - INFO - 172.31.128.16 - - [11/May/2025 01:20:29] "GET / HTTP/1.1" 200 -
+2025-05-11 01:20:29,072 - werkzeug - INFO - 172.31.128.16 - - [11/May/2025 01:20:29] "GET / HTTP/1.1" 200 -
+2025-05-11 01:24:55,235 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 01:24:55,253 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 01:24:55,438 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.54:8080
+2025-05-11 01:24:55,438 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 01:26:55,258 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:26:55] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:26:55,259 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:28:55,262 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:28:55] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:28:55,263 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:30:55,266 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:30:55] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:30:55,267 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:31:26,633 - KeepAliveServer - INFO - Menerima sinyal untuk keluar, menghentikan bot dengan rapi...
+2025-05-11 01:31:30,243 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 01:31:30,263 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 01:31:30,280 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.54:8080
+2025-05-11 01:31:30,281 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 01:33:30,280 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:33:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:33:30,281 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:35:30,287 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:35:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:35:30,289 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:37:30,291 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:37:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:37:30,293 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:39:30,295 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:39:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:39:30,297 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:41:30,300 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:41:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:41:30,304 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:43:30,306 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:43:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:43:30,308 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:45:30,311 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:45:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:45:30,320 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:47:30,324 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:47:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:47:30,325 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:49:30,328 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:49:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:49:30,329 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:51:30,331 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:51:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:51:30,334 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:53:30,337 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:53:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:53:30,338 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:55:30,341 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:55:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:55:30,343 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:57:30,346 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:57:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:57:30,347 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 01:59:30,349 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 01:59:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 01:59:30,350 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:01:30,353 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:01:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:01:30,364 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:03:30,370 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:03:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:03:30,371 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:05:30,373 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:05:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:05:30,374 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:07:30,377 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:07:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:07:30,377 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:09:30,379 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:09:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:09:30,380 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:11:30,383 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:11:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:11:30,384 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:11:43,248 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 02:11:43,275 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 02:13:30,386 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:13:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:13:30,387 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:15:30,389 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:15:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:15:30,390 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:17:30,392 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:17:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:17:30,393 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:19:30,396 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:19:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:19:30,398 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:21:30,400 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:21:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:21:30,401 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:23:30,403 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:23:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:23:30,409 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:25:30,412 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:25:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:25:30,413 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:27:30,415 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:27:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:27:30,421 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:29:30,424 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:29:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:29:30,424 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:31:30,426 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:31:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:31:30,430 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:33:30,432 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:33:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:33:30,433 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:35:30,435 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:35:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:35:30,436 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:37:30,438 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:37:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:37:30,439 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:39:30,441 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:39:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:39:30,442 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:41:30,444 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:41:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:41:30,445 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:43:30,448 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:43:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:43:30,449 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:45:30,451 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:45:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:45:30,455 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:47:30,457 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:47:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:47:30,458 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:49:30,460 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:49:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:49:30,461 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:51:30,463 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:51:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:51:30,464 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:53:30,466 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:53:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:53:30,467 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:55:30,470 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:55:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:55:30,471 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 02:57:30,473 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 02:57:30] "GET /ping HTTP/1.1" 200 -
+2025-05-11 02:57:30,474 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:16:45,047 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 04:16:45,057 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 04:16:45,275 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.48:8080
+2025-05-11 04:16:45,275 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 04:16:48,477 - werkzeug - INFO - 172.31.128.48 - - [11/May/2025 04:16:48] "GET / HTTP/1.1" 200 -
+2025-05-11 04:16:48,498 - werkzeug - INFO - 172.31.128.48 - - [11/May/2025 04:16:48] "GET / HTTP/1.1" 200 -
+2025-05-11 04:18:20,313 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 04:18:20,318 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 04:18:20,534 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.22:8080
+2025-05-11 04:18:20,534 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 04:20:11,076 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 04:20:11,085 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 04:20:11,246 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.82:8080
+2025-05-11 04:20:11,246 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 04:22:11,097 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:22:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:22:11,105 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:24:11,108 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:24:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:24:11,109 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:26:11,112 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:26:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:26:11,113 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:28:11,117 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:28:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:28:11,118 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:30:11,121 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:30:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:30:11,122 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:32:11,125 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:32:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:32:11,126 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:34:11,128 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:34:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:34:11,129 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:36:11,132 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:36:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:36:11,133 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:38:11,136 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:38:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:38:11,138 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:40:11,140 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:40:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:40:11,141 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:42:11,143 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:42:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:42:11,144 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:44:11,146 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:44:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:44:11,148 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:46:11,150 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:46:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:46:11,151 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:48:11,153 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:48:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:48:11,154 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:50:11,156 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:50:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:50:11,157 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:52:11,159 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:52:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:52:11,160 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:54:11,162 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:54:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:54:11,164 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:56:11,166 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:56:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:56:11,166 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 04:58:11,169 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 04:58:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 04:58:11,170 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 05:00:11,172 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 05:00:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 05:00:11,175 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 05:02:11,177 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 05:02:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 05:02:11,178 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 05:04:11,182 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 05:04:11] "GET /ping HTTP/1.1" 200 -
+2025-05-11 05:04:11,182 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-11 12:08:45,192 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 12:08:45,198 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 12:08:45,442 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.25:8080
+2025-05-11 12:08:45,442 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 12:09:00,469 - werkzeug - INFO - 172.31.128.25 - - [11/May/2025 12:09:00] "GET / HTTP/1.1" 200 -
+2025-05-11 12:10:59,595 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 12:10:59,602 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 12:10:59,866 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.10:8080
+2025-05-11 12:10:59,867 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 12:13:45,034 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 12:13:45,044 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 12:13:45,314 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.42:8080
+2025-05-11 12:13:45,315 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 12:13:46,165 - KeepAliveServer - INFO - Menerima sinyal untuk keluar, menghentikan bot dengan rapi...
+2025-05-11 12:13:46,170 - KeepAliveServer - INFO - Menerima sinyal untuk keluar, menghentikan bot dengan rapi...
+2025-05-11 12:13:51,929 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 12:13:51,935 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 12:13:51,945 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.42:8080
+2025-05-11 12:13:51,945 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 12:14:55,208 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-11 12:14:55,216 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-11 12:14:55,486 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.19:8080
+2025-05-11 12:14:55,487 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 12:15:01,572 - werkzeug - INFO - 172.31.128.19 - - [11/May/2025 12:15:01] "GET / HTTP/1.1" 200 -
+2025-05-12 03:33:45,058 - KeepAliveServer - INFO - Menjalankan Bot Telegram ODP...
+2025-05-12 03:33:45,070 - KeepAliveServer - INFO - Memulai self-ping thread untuk menjaga server tetap aktif
+2025-05-12 03:33:45,292 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.31.128.50:8080
+2025-05-12 03:33:45,292 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-12 03:35:45,076 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 03:35:45] "GET /ping HTTP/1.1" 200 -
+2025-05-12 03:35:45,078 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-12 03:37:45,081 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 03:37:45] "GET /ping HTTP/1.1" 200 -
+2025-05-12 03:37:45,082 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-12 03:39:45,084 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 03:39:45] "GET /ping HTTP/1.1" 200 -
+2025-05-12 03:39:45,085 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-12 03:41:45,088 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 03:41:45] "GET /ping HTTP/1.1" 200 -
+2025-05-12 03:41:45,088 - KeepAliveServer - INFO - Self-ping berhasil: 200
+2025-05-12 03:43:45,091 - werkzeug - INFO - 127.0.0.1 - - [12/May/2025 03:43:45] "GET /ping HTTP/1.1" 200 -
+2025-05-12 03:43:45,092 - KeepAliveServer - INFO - Self-ping berhasil: 200

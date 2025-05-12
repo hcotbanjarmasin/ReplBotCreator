@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta Lokasi Langsung</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        #header {
+            background: #f8f9fa;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+        #header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+        #map-container {
+            height: calc(100% - 50px);
+            width: 100%;
+        }
+        #content {
+            padding: 10px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Tampilan Peta Langsung</h1>
+    </div>
+    <div id="content">
+        <p>Memuat peta... Jika peta tidak muncul dalam beberapa detik, gunakan tautan alternatif di bawah:</p>
+        <div id="alt-links">
+            <a href="#" id="map-view-link" style="font-weight: bold;">Buka dengan Tampilan Peta Khusus</a>
+        </div>
+    </div>
+    <div id="map-container"></div>
+
+    <script>
+        // Mendapatkan ID peta dari URL
+        function getUrlParam(param) {
+            var search = window.location.search.substring(1);
+            var params = search.split('&');
+            for (var i = 0; i < params.length; i++) {
+                var pair = params[i].split('=');
+                if (pair[0] == param) {
+                    return decodeURIComponent(pair[1]);
+                }
+            }
+            return null;
+        }
+        
+        // Ambil ID peta
+        var mapId = getUrlParam('id');
+        
+        // Jika ada ID peta, muat peta
+        if (mapId) {
+            // Set link alternatif
+            document.getElementById('map-view-link').href = '/map_view/' + mapId;
+            
+            // Muat HTML peta ke dalam container
+            fetch('/maps/' + mapId)
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    }
+                    throw new Error('Tidak dapat memuat peta');
+                })
+                .then(html => {
+                    // Extract body content dari HTML peta
+                    var parser = new DOMParser();
+                    var doc = parser.parseFromString(html, 'text/html');
+                    var mapContent = doc.body.innerHTML;
+                    
+                    // Masukkan ke container
+                    document.getElementById('map-container').innerHTML = mapContent;
+                    document.getElementById('content').style.display = 'none';
+                })
+                .catch(err => {
+                    document.getElementById('content').innerHTML = '<p>Error: ' + err.message + '</p>' +
+                        '<p>Silakan gunakan tautan alternatif di bawah:</p>' +
+                        '<p><a href="/map_view/' + mapId + '" style="font-weight: bold;">Buka dengan Tampilan Peta Khusus</a></p>';
+                });
+        } else {
+            document.getElementById('content').innerHTML = '<p>Error: ID peta tidak ditemukan</p>';
+        }
+    </script>
+</body>
+</html>

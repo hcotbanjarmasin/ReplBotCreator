@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencarian ODP Langsung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .examples {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .examples a {
+            display: block;
+            margin-bottom: 5px;
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .examples a:hover {
+            text-decoration: underline;
+        }
+        .loading {
+            text-align: center;
+            padding: 20px;
+            display: none;
+        }
+        .loading:after {
+            content: '.';
+            animation: dots 1s steps(5, end) infinite;
+        }
+        @keyframes dots {
+            0%, 20% {
+                color: rgba(0,0,0,0);
+                text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0);
+            }
+            40% {
+                color: black;
+                text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0);
+            }
+            60% {
+                text-shadow: .25em 0 0 black, .5em 0 0 rgba(0,0,0,0);
+            }
+            80%, 100% {
+                text-shadow: .25em 0 0 black, .5em 0 0 black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Pencarian ODP Langsung</h1>
+    <p>Masukkan koordinat untuk mencari ODP dalam radius tertentu. Hasil akan ditampilkan sebagai file gambar PNG.</p>
+    
+    <form id="searchForm" action="/search_api" method="get">
+        <div class="form-group">
+            <label for="lat">Latitude:</label>
+            <input type="number" id="lat" name="lat" step="0.000001" value="-3.292481" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="lng">Longitude:</label>
+            <input type="number" id="lng" name="lng" step="0.000001" value="114.592482" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="radius">Radius Pencarian (meter):</label>
+            <input type="number" id="radius" name="radius" min="10" max="10000" value="500">
+        </div>
+        
+        <button type="submit">Cari ODP</button>
+    </form>
+    
+    <div class="loading" id="loading">Sedang mencari ODP</div>
+    
+    <div class="examples">
+        <h3>Contoh Koordinat:</h3>
+        <p><strong>ODP di Kalimantan Selatan:</strong></p>
+        <p onclick="setCoordinates(-3.292481, 114.592482, 100)" style="cursor:pointer; color:#1a73e8;">1. ODP di sekitar -3.292481, 114.592482 (radius 100m)</p>
+        <p onclick="setCoordinates(-3.8159, 114.7505, 500)" style="cursor:pointer; color:#1a73e8;">2. ODP di area ODP-PLE-FM/002 (radius 500m)</p>
+        <p onclick="setCoordinates(-3.3251, 114.5917, 750)" style="cursor:pointer; color:#1a73e8;">3. ODP di area GCL-BJM-F01/001 (radius 750m)</p>
+        <p onclick="setCoordinates(-3.3219, 114.6034, 1500)" style="cursor:pointer; color:#1a73e8;">4. Area dengan banyak ODP (radius 1500m)</p>
+    </div>
+    
+    <div class="result" id="result"></div>
+    
+    <script>
+        // Fungsi untuk mengatur koordinat
+        function setCoordinates(lat, lng, radius) {
+            document.getElementById('lat').value = lat;
+            document.getElementById('lng').value = lng;
+            document.getElementById('radius').value = radius;
+            
+            // Auto-submit form
+            document.getElementById('searchForm').dispatchEvent(new Event('submit'));
+        }
+        
+        // Handle form submission
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Tampilkan loading
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('result').innerHTML = '';
+            
+            // Dapatkan nilai form
+            var lat = document.getElementById('lat').value;
+            var lng = document.getElementById('lng').value;
+            var radius = document.getElementById('radius').value;
+            
+            // Generate URL gambar
+            var imageUrl = '/search_odp?lat=' + lat + '&lng=' + lng + '&radius=' + radius + '&t=' + new Date().getTime();
+            
+            // Buat image element
+            var img = new Image();
+            img.onload = function() {
+                // Sembunyikan loading
+                document.getElementById('loading').style.display = 'none';
+                
+                // Tampilkan hasil
+                var resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = '<h2>Hasil Pencarian</h2>';
+                resultDiv.appendChild(img);
+                
+                // Scroll ke hasil
+                resultDiv.scrollIntoView({behavior: 'smooth'});
+            };
+            img.onerror = function() {
+                // Sembunyikan loading
+                document.getElementById('loading').style.display = 'none';
+                
+                // Tampilkan pesan error
+                document.getElementById('result').innerHTML = '<h2>Error</h2><p>Gagal memuat hasil pencarian. Silakan coba lagi.</p>';
+            };
+            img.src = imageUrl;
+            img.alt = 'Peta ODP';
+            img.style.maxWidth = '100%';
+        });
+    </script>
+</body>
+</html>

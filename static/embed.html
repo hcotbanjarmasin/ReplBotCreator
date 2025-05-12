@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta Lokasi</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        .map-container {
+            height: 100%;
+            width: 100%;
+        }
+        iframe {
+            height: 100%;
+            width: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="map-container">
+        <iframe id="map-frame" src=""></iframe>
+    </div>
+
+    <script>
+        // Dapatkan parameter 'id' dari URL
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+        
+        // Set src iframe dengan ID peta
+        var mapId = getUrlParameter('id');
+        if (mapId) {
+            document.getElementById('map-frame').src = '/maps/' + mapId;
+        } else {
+            document.body.innerHTML = '<p style="padding: 20px;">ID peta tidak ditemukan.</p>';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,766 @@
+import telebot
+import logging
+import re
+import os
+import sys
+from telebot import types
+import pandas as pd
+import matplotlib.pyplot as plt
+from geopy.distance import geodesic
+import contextily as ctx
+import matplotlib.patheffects as path_effects
+import uuid
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+
+# Konfigurasi logging
+logging.basicConfig(level=logging.INFO, 
+                   format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+# Baca token bot dari lingkungan
+TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN')
+if not TELEGRAM_TOKEN:
+    logger.error("Token Telegram tidak ditemukan! Set variabel lingkungan TELEGRAM_TOKEN.")
+    sys.exit(1)
+
+# URL spreadsheet publik
+SPREADSHEET_URL = "https://docs.google.com/spreadsheets/d/16PFuuwJjL-_hJKuopMJlktlwaNWLnKQdPUMZdX55pkQ/edit?gid=1933962208"
+
+# Kolom-kolom di spreadsheet
+LAT_COLUMN = "LATITUDE"
+LNG_COLUMN = "LONGITUDE"
+NAME_COLUMN = "ODP NAME"
+AVAI_COLUMN = "AVAI"
+
+# Default radius
+DEFAULT_RADIUS = 250  # meter
+
+# Direktori untuk menyimpan gambar peta
+ODP_IMAGE_DIR = "static/odp_images"
+os.makedirs(ODP_IMAGE_DIR, exist_ok=True)
+
+# Inisialisasi bot
+bot = telebot.TeleBot(TELEGRAM_TOKEN)
+
+# Data spreadsheet cache
+spreadsheet_data = None
+
+def load_spreadsheet_data():
+    """
+    Muat data dari spreadsheet dan simpan ke cache.
+    """
+    global spreadsheet_data
+    try:
+        # Ekstrak ID spreadsheet dari URL
+        match = re.search(r'/d/([a-zA-Z0-9-_]+)', SPREADSHEET_URL)
+        if match:
+            spreadsheet_id = match.group(1)
+        else:
+            spreadsheet_id = SPREADSHEET_URL  # Anggap URL adalah ID langsung
+            
+        # Konstruksi URL CSV
+        csv_url = f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}/gviz/tq?tqx=out:csv&sheet=Sheet1"
+        
+        # Muat data dari CSV
+        logger.info(f"Mencoba memuat data dari spreadsheet")
+        df = pd.read_csv(csv_url)
+        spreadsheet_data = df
+        logger.info(f"Berhasil memuat {len(df)} baris data")
+        
+        return df
+    except Exception as e:
+        logger.error(f"Error saat memuat data: {e}")
+        return None
+
+def find_nearby_odps(ref_lat, ref_lng, radius_meters=DEFAULT_RADIUS):
+    """
+    Temukan ODP dalam radius tertentu.
+    """
+    global spreadsheet_data
+    try:
+        # Muat data jika belum dimuat
+        if spreadsheet_data is None:
+            spreadsheet_data = load_spreadsheet_data()
+            
+        if spreadsheet_data is None or spreadsheet_data.empty:
+            logger.error("Data tidak tersedia")
+            return None
+            
+        # Buat salinan data
+        df = spreadsheet_data.copy()
+        
+        # Filter baris dengan data latitude dan longitude yang valid
+        df = df.dropna(subset=[LAT_COLUMN, LNG_COLUMN])
+        
+        # Konversi ke numerik jika string
+        df[LAT_COLUMN] = pd.to_numeric(df[LAT_COLUMN], errors='coerce')
+        df[LNG_COLUMN] = pd.to_numeric(df[LNG_COLUMN], errors='coerce')
+        df = df.dropna(subset=[LAT_COLUMN, LNG_COLUMN])
+        
+        # Hitung jarak dalam meter
+        ref_point = (ref_lat, ref_lng)
+        df['jarak_meter'] = df.apply(
+            lambda row: geodesic(ref_point, (row[LAT_COLUMN], row[LNG_COLUMN])).meters,
+            axis=1
+        )
+        
+        # Filter lokasi dalam radius
+        nearby = df[df['jarak_meter'] <= radius_meters].copy()
+        
+        # Urutkan berdasarkan jarak
+        if not nearby.empty:
+            nearby = nearby.sort_values('jarak_meter')
+            logger.info(f"Ditemukan {len(nearby)} ODP dalam radius {radius_meters}m")
+        else:
+            logger.info(f"Tidak ditemukan ODP dalam radius {radius_meters}m")
+            
+        return nearby
+    except Exception as e:
+        logger.error(f"Error saat mencari ODP terdekat: {e}")
+        return None
+
+def create_odp_map(ref_lat, ref_lng, nearby_df, radius_meters=DEFAULT_RADIUS, max_display=30, with_routes=True, use_satellite=True):
+    """
+    Buat peta dengan ODP yang ditemukan.
+    
+    Args:
+        ref_lat: Latitude titik referensi
+        ref_lng: Longitude titik referensi
+        nearby_df: DataFrame dengan ODP terdekat
+        radius_meters: Radius pencarian dalam meter
+        max_display: Maksimal ODP yang ditampilkan
+        with_routes: Menampilkan rute dari titik referensi ke ODP terdekat
+        use_satellite: Menggunakan citra satelit sebagai basemap
+    """
+    try:
+        if nearby_df is None or nearby_df.empty:
+            logger.warning("Tidak ada data ODP untuk divisualisasikan")
+            return None
+            
+        # Batasi jumlah ODP yang ditampilkan jika terlalu banyak
+        display_df = nearby_df
+        if len(nearby_df) > max_display:
+            display_df = nearby_df.head(max_display)
+            logger.info(f"Membatasi tampilan hingga {max_display} ODP terdekat dari {len(nearby_df)} total")
+            
+        # Buat figure dan axis
+        fig, ax = plt.subplots(figsize=(15, 15), dpi=200)
+        
+        # Plot titik referensi sebagai bintang merah
+        ax.plot(ref_lng, ref_lat, 'r*', markersize=15, label='Titik Referensi')
+        
+        # Tambahkan label referensi dengan koordinat
+        ref_text = f"REF: {ref_lat:.6f}, {ref_lng:.6f}"
+        t = ax.text(ref_lng, ref_lat, ref_text, 
+                 color='red', fontsize=10, fontweight='bold',
+                 verticalalignment='bottom',
+                 horizontalalignment='center')
+        t.set_path_effects([path_effects.withStroke(linewidth=3, foreground='white')])
+        
+        # Gambar lingkaran radius
+        radius_degrees = radius_meters / 111000  # Konversi meter ke derajat (perkiraan)
+        circle = plt.Circle((ref_lng, ref_lat), radius_degrees, 
+                          fill=False, color='red', linewidth=2, alpha=0.7)
+        ax.add_patch(circle)
+        
+        # Plot ODP dengan koordinat ditampilkan dan rute jika diminta
+        for idx, row in display_df.iterrows():
+            lat = row[LAT_COLUMN]
+            lng = row[LNG_COLUMN]
+            distance = row['jarak_meter']
+            
+            # Tentukan warna berdasarkan jarak
+            if distance < radius_meters * 0.25:
+                color = 'green'  # Sangat dekat
+            elif distance < radius_meters * 0.5:
+                color = 'blue'   # Dekat
+            elif distance < radius_meters * 0.75:
+                color = 'orange' # Sedang
+            else:
+                color = 'purple' # Jauh
+            
+            # Plot marker
+            ax.plot(lng, lat, 'o', color=color, markersize=10)
+            
+            # Tambahkan rute dari referensi ke ODP
+            if with_routes:
+                ax.plot([ref_lng, lng], [ref_lat, lat], '--', 
+                      color=color, linewidth=1.5, alpha=0.7,
+                      path_effects=[path_effects.withStroke(linewidth=2.5, foreground='white', alpha=0.2)])
+            
+            # Tambahkan label ODP dengan koordinat
+            if NAME_COLUMN and NAME_COLUMN in row:
+                name = row[NAME_COLUMN]
+                availability = row.get(AVAI_COLUMN, "N/A")
+                label_text = f"{name}\n{lat:.6f}, {lng:.6f}\nKetersediaan: {availability}"
+            else:
+                label_text = f"ODP #{idx+1}\n{lat:.6f}, {lng:.6f}"
+            
+            # Tambahkan stroke putih untuk keterbacaan
+            t = ax.text(lng, lat, label_text, 
+                     color='black', fontsize=8, fontweight='bold',
+                     verticalalignment='top',
+                     horizontalalignment='center',
+                     bbox=dict(facecolor='white', alpha=0.6, boxstyle='round,pad=0.2', edgecolor=color))
+            t.set_path_effects([path_effects.withStroke(linewidth=2, foreground='white')])
+            
+            # Tambahkan info jarak
+            dist_txt = f"{distance:.1f}m"
+            t2 = ax.text(lng, lat, dist_txt, 
+                      color=color, fontsize=8, fontweight='bold',
+                      verticalalignment='bottom',
+                      horizontalalignment='center',
+                      bbox=dict(facecolor='white', alpha=0.6, boxstyle='round,pad=0.1'))
+            t2.set_path_effects([path_effects.withStroke(linewidth=2, foreground='white')])
+        
+        # Set judul dan label dengan informasi tambahan
+        title_elements = [f'ODP dalam Radius {radius_meters}m dari Titik Referensi']
+        if len(nearby_df) > max_display:
+            title_elements.append(f'(Menampilkan {max_display} dari {len(nearby_df)} ODP)')
+        if with_routes:
+            title_elements.append('dengan Rute')
+        
+        title_text = '\n'.join(title_elements)
+        
+        # Tambahkan background putih transparan di belakang judul agar lebih terbaca
+        ax.set_title(
+            title_text, 
+            fontsize=12, 
+            fontweight='bold',
+            bbox=dict(
+                facecolor='white',
+                alpha=0.7,
+                edgecolor='none',
+                boxstyle='round,pad=0.5'
+            )
+        )
+        
+        # Tambahkan basemap (citra satelit atau peta jalan)
+        try:
+            # Pilih provider citra satelit atau peta jalan
+            if use_satellite:
+                # Provider citra satelit dengan jalan dan bangunan yang jelas
+                providers = [
+                    # Google Hybrid (Satelit + jalan) - prioritas utama
+                    {
+                        'url': 'https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}',
+                        'attribution': 'Google Maps',
+                        'name': 'Google.Hybrid'
+                    },
+                    # Google Satelit
+                    {
+                        'url': 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
+                        'attribution': 'Google Maps',
+                        'name': 'Google.Satellite'
+                    },
+                    # Google Terrain dengan jalan
+                    {
+                        'url': 'https://mt1.google.com/vt/lyrs=p&x={x}&y={y}&z={z}',
+                        'attribution': 'Google Maps',
+                        'name': 'Google.Terrain'
+                    },
+                    # Esri WorldImagery sebagai fallback
+                    {
+                        'url': 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+                        'attribution': 'Esri World Imagery',
+                        'name': 'Esri.WorldImagery'
+                    }
+                ]
+                
+                # Coba setiap provider sampai berhasil
+                for provider in providers:
+                    try:
+                        logger.info(f"Mencoba provider: {provider}")
+                        ctx.add_basemap(ax, source=provider, zoom=17)
+                        logger.info(f"Berhasil menggunakan provider: {provider}")
+                        break
+                    except Exception as e:
+                        logger.warning(f"Gagal menggunakan provider {provider}: {e}")
+                        continue
+            else:
+                # Gunakan peta jalan OpenStreetMap
+                ctx.add_basemap(ax, source=ctx.providers.OpenStreetMap.Mapnik, zoom=17)
+                
+        except Exception as e:
+            logger.warning(f"Tidak dapat menambahkan basemap: {e}")
+            # Buat latar belakang putih sebagai alternatif
+            ax.set_facecolor('white')
+            ax.grid(True, linestyle='--', alpha=0.7)
+            
+            # Tambahkan pesan error sebagai watermark
+            fig.text(0.5, 0.5, "Citra Satelit Tidak Tersedia",
+                   fontsize=20, color='gray', alpha=0.5,
+                   ha='center', va='center', rotation=30)
+        
+        # Tambahkan legenda untuk kategori jarak
+        green_marker = plt.Line2D([0], [0], marker='o', color='w', markerfacecolor='green', markersize=10)
+        blue_marker = plt.Line2D([0], [0], marker='o', color='w', markerfacecolor='blue', markersize=10)
+        orange_marker = plt.Line2D([0], [0], marker='o', color='w', markerfacecolor='orange', markersize=10)
+        purple_marker = plt.Line2D([0], [0], marker='o', color='w', markerfacecolor='purple', markersize=10)
+        ref_marker = plt.Line2D([0], [0], marker='*', color='w', markerfacecolor='red', markersize=15)
+        
+        legend_items = [
+            (green_marker, 'Sangat dekat (0-25%)'),
+            (blue_marker, 'Dekat (25-50%)'),
+            (orange_marker, 'Sedang (50-75%)'),
+            (purple_marker, 'Jauh (75-100%)'),
+            (ref_marker, 'Titik Referensi')
+        ]
+        
+        if with_routes:
+            route_line = plt.Line2D([0], [0], color='green', linestyle='--', linewidth=2)
+            legend_items.append((route_line, 'Rute ke ODP'))
+            
+        # Buat legenda dari items
+        ax.legend(
+            [item[0] for item in legend_items],
+            [item[1] for item in legend_items],
+            loc='upper right',
+            fancybox=True, framealpha=0.7
+        )
+        
+        # Tambahkan informasi jumlah ODP
+        info_text = f"Jumlah ODP: {len(nearby_df)}"
+        info = ax.text(0.02, 0.02, info_text, transform=ax.transAxes, 
+                     fontsize=12, fontweight='bold',
+                     bbox=dict(facecolor='white', alpha=0.8, boxstyle='round'))
+        
+        # Buat ID unik untuk file
+        map_type = "satellite" if use_satellite else "street"
+        route_type = "with_routes" if with_routes else "no_routes"
+        file_id = f"tg_{map_type}_{route_type}_{uuid.uuid4()}"
+        file_path = os.path.join(ODP_IMAGE_DIR, f"{file_id}.png")
+        
+        # Simpan gambar dengan resolusi tinggi
+        plt.savefig(file_path, bbox_inches='tight', dpi=200)
+        plt.close(fig)
+        
+        logger.info(f"Peta berhasil disimpan di: {file_path}")
+        
+        return file_path
+        
+    except Exception as e:
+        logger.error(f"Error saat membuat peta ODP: {e}")
+        import traceback
+        logger.error(traceback.format_exc())
+        return None
+
+def format_odp_list(nearby_odps, max_items=10):
+    """Format daftar ODP untuk teks pesan"""
+    result = []
+    for idx, row in nearby_odps.head(max_items).iterrows():
+        name = row.get(NAME_COLUMN, f"ODP #{idx+1}")
+        distance = row['jarak_meter']
+        lat = row[LAT_COLUMN]
+        lng = row[LNG_COLUMN]
+        avai = row.get(AVAI_COLUMN, "N/A")
+        result.append(f"🔹 {name} - {distance:.1f}m\n   📍 {lat}, {lng}\n   🟢 Ketersediaan: {avai}")
+    
+    if len(nearby_odps) > max_items:
+        result.append(f"... dan {len(nearby_odps) - max_items} ODP lainnya.")
+    
+    return "\n".join(result)
+
+@bot.message_handler(commands=['start'])
+def start(message):
+    """Kirim pesan selamat datang."""
+    bot.reply_to(message, 
+                 f"👋 Halo {message.from_user.first_name}!\n\n"
+                 f"Saya adalah bot pencari ODP berdasarkan koordinat.\n\n"
+                 f"Gunakan perintah /help untuk melihat cara penggunaan.")
+
+@bot.message_handler(commands=['help'])
+def help_command(message):
+    """Kirim informasi bantuan."""
+    help_text = (
+        "🤖 *Bot Pencari ODP*\n\n"
+        "Bot ini membantu menemukan ODP (Optical Distribution Point) yang berada dalam radius tertentu dari koordinat yang diberikan.\n\n"
+        "*Cara Penggunaan:*\n"
+        "1. Kirim lokasi Anda dengan mengklik tombol 📎 dan pilih *Location*\n"
+        "2. Kirim koordinat dengan format: `-3.292481, 114.592482`\n"
+        "3. Gunakan perintah `/cari -3.292481 114.592482 250`\n\n"
+        "*Perintah Tersedia:*\n"
+        "/cari <lat> <lng> [radius] - Mencari ODP di sekitar koordinat tertentu\n"
+        "/radius [nilai] - Melihat atau mengubah radius pencarian (default: 250m)\n"
+        "/contoh - Menampilkan beberapa contoh koordinat\n"
+        "/status - Melihat status bot dan data\n"
+        "/help - Menampilkan bantuan ini\n\n"
+        "*Contoh:*\n"
+        "`/cari -3.292481 114.592482 100`\n"
+        "Akan mencari ODP dalam radius 100m dari koordinat tersebut."
+    )
+    
+    bot.send_message(message.chat.id, help_text, parse_mode='Markdown')
+
+@bot.message_handler(commands=['radius'])
+def radius_command(message):
+    """Melihat atau mengubah radius pencarian."""
+    args = message.text.split()
+    
+    # Default radius
+    if len(args) == 1:
+        # Tidak ada argumen, tampilkan radius default
+        bot.reply_to(message, f"🔍 Radius pencarian default: {DEFAULT_RADIUS}m\n\nUntuk mengubah sementara, gunakan format:\n/radius [nilai dalam meter]\n\nAtau saat mencari:\n/cari <lat> <lng> [radius]")
+    else:
+        try:
+            # Coba parse nilai radius
+            radius = int(args[1])
+            if radius < 10:
+                radius = 10
+                bot.reply_to(message, f"⚠️ Radius terlalu kecil, gunakan minimal 10m")
+            elif radius > 2000:
+                radius = 2000
+                bot.reply_to(message, f"⚠️ Radius terlalu besar, gunakan maksimal 2000m")
+            else:
+                bot.reply_to(message, f"✅ Radius pencarian: {radius}m\n\nGunakan format:\n/cari <lat> <lng> {radius}")
+        except ValueError:
+            # Nilai radius tidak valid
+            bot.reply_to(message, f"❌ Nilai radius tidak valid. Gunakan angka, misalnya: /radius 250")
+
+@bot.message_handler(commands=['contoh'])
+def examples_command(message):
+    """Menampilkan contoh koordinat."""
+    examples = (
+        "📍 *Contoh Koordinat ODP:*\n\n"
+        "1. ODP di Sekitar BJM-FAP/012:\n"
+        "   `-3.292481, 114.592482`\n"
+        "   `/cari -3.292481 114.592482 100`\n\n"
+        "2. ODP di Area ODP-PLE-FM/002:\n"
+        "   `-3.8159, 114.7505`\n"
+        "   `/cari -3.8159 114.7505 500`\n\n"
+        "3. ODP di Area GCL-BJM-F01/001:\n"
+        "   `-3.3251, 114.5917`\n"
+        "   `/cari -3.3251 114.5917 750`\n\n"
+        "4. Area dengan Banyak ODP:\n"
+        "   `-3.3219, 114.6034`\n"
+        "   `/cari -3.3219 114.6034 250`\n\n"
+        "Klik salah satu perintah di atas untuk mencoba, atau kirim koordinat dengan format `latitude, longitude`"
+    )
+    
+    bot.send_message(message.chat.id, examples, parse_mode='Markdown')
+
+@bot.message_handler(commands=['status'])
+def status_command(message):
+    """Menampilkan status bot dan data."""
+    global spreadsheet_data
+    
+    # Cek data spreadsheet
+    if spreadsheet_data is None:
+        data = load_spreadsheet_data()
+        if data is None:
+            bot.reply_to(message, "❌ Status: Data tidak tersedia.\nCoba muat ulang dengan /reload")
+            return
+    
+    # Tampilkan status
+    status_text = (
+        "✅ *Status Bot:* Bot berjalan\n"
+        f"📊 *Jumlah Data:* {len(spreadsheet_data)} ODP\n"
+        f"🔄 *Terakhir Dimuat:* Terbaru\n\n"
+        f"💡 Gunakan perintah /help untuk bantuan."
+    )
+    
+    bot.send_message(message.chat.id, status_text, parse_mode='Markdown')
+
+@bot.message_handler(commands=['reload'])
+def reload_command(message):
+    """Muat ulang data dari spreadsheet."""
+    bot.send_message(message.chat.id, "🔄 Memuat ulang data dari spreadsheet...")
+    
+    # Muat ulang data
+    data = load_spreadsheet_data()
+    
+    if data is not None:
+        bot.send_message(message.chat.id, f"✅ Berhasil memuat {len(data)} baris data.")
+    else:
+        bot.send_message(message.chat.id, f"❌ Gagal memuat data dari spreadsheet.")
+
+@bot.message_handler(commands=['cari'])
+def search_command(message):
+    """Mencari ODP berdasarkan koordinat."""
+    args = message.text.split()
+    
+    if len(args) < 3:
+        bot.reply_to(message, "❌ Format tidak valid.\nGunakan:\n/cari <lat> <lng> [radius]")
+        return
+    
+    try:
+        # Parse koordinat dan radius
+        lat = float(args[1])
+        lng = float(args[2])
+        radius = DEFAULT_RADIUS  # Default radius
+        
+        if len(args) >= 4:
+            radius = int(args[3])
+            
+        # Kirim pesan "sedang mencari"
+        wait_msg = bot.send_message(message.chat.id, f"🔍 Mencari ODP dalam radius {radius}m dari koordinat {lat}, {lng}...")
+        
+        # Muat data jika belum dimuat
+        if spreadsheet_data is None:
+            load_spreadsheet_data()
+            
+        # Cari ODP terdekat
+        nearby_odps = find_nearby_odps(lat, lng, radius)
+        
+        if nearby_odps is None:
+            bot.edit_message_text("❌ Terjadi error saat mencari ODP.", message.chat.id, wait_msg.message_id)
+            return
+            
+        if nearby_odps.empty:
+            bot.edit_message_text(f"❌ Tidak ditemukan ODP dalam radius {radius}m dari koordinat {lat}, {lng}.", 
+                              message.chat.id, wait_msg.message_id)
+            return
+            
+        # Format hasil pencarian
+        result_text = (
+            f"✅ *Ditemukan {len(nearby_odps)} ODP* dalam radius {radius}m dari koordinat:\n"
+            f"📍 *{lat}, {lng}*\n\n"
+            f"*ODP Terdekat:*\n{format_odp_list(nearby_odps)}\n\n"
+            f"📊 Menampilkan peta..."
+        )
+        
+        # Edit pesan tunggu
+        bot.edit_message_text(result_text, message.chat.id, wait_msg.message_id, parse_mode='Markdown')
+        
+        # Buat dan kirim peta dengan citra satelit dan rute
+        map_file = create_odp_map(lat, lng, nearby_odps, radius, with_routes=True, use_satellite=True)
+        
+        if map_file:
+            caption = f"🗺️ Peta satelit {len(nearby_odps)} ODP dalam radius {radius}m dengan rute"
+            with open(map_file, 'rb') as photo:
+                bot.send_photo(message.chat.id, photo, caption=caption)
+                
+            # Tambahkan opsi untuk melihat peta jalan juga
+            keyboard = types.InlineKeyboardMarkup()
+            btn_street = types.InlineKeyboardButton(text="🗺️ Lihat Peta Jalan", callback_data=f"street_{lat}_{lng}_{radius}")
+            btn_satellite_no_route = types.InlineKeyboardButton(text="🛰️ Satelit Tanpa Rute", callback_data=f"sat_noroute_{lat}_{lng}_{radius}")
+            keyboard.add(btn_street, btn_satellite_no_route)
+            
+            bot.send_message(message.chat.id, "Opsi tampilan peta lainnya:", reply_markup=keyboard)
+        else:
+            bot.send_message(message.chat.id, "❌ Gagal membuat peta ODP.")
+            
+    except ValueError:
+        bot.reply_to(message, "❌ Format koordinat tidak valid.\nGunakan angka untuk latitude dan longitude.")
+    except Exception as e:
+        logger.error(f"Error: {e}")
+        bot.reply_to(message, f"❌ Terjadi error: {str(e)}")
+
+@bot.message_handler(content_types=['location'])
+def handle_location(message):
+    """Tangani saat pengguna mengirim lokasi."""
+    lat = message.location.latitude
+    lng = message.location.longitude
+    radius = DEFAULT_RADIUS  # Default
+    
+    # Kirim pesan "sedang mencari"
+    wait_msg = bot.send_message(message.chat.id, f"🔍 Mencari ODP dalam radius {radius}m dari lokasi Anda...")
+    
+    # Muat data jika belum dimuat
+    if spreadsheet_data is None:
+        load_spreadsheet_data()
+        
+    # Cari ODP terdekat
+    nearby_odps = find_nearby_odps(lat, lng, radius)
+    
+    if nearby_odps is None:
+        bot.edit_message_text("❌ Terjadi error saat mencari ODP.", message.chat.id, wait_msg.message_id)
+        return
+        
+    if nearby_odps.empty:
+        bot.edit_message_text(f"❌ Tidak ditemukan ODP dalam radius {radius}m dari lokasi Anda.", 
+                          message.chat.id, wait_msg.message_id)
+        return
+        
+    # Format hasil pencarian
+    result_text = (
+        f"✅ *Ditemukan {len(nearby_odps)} ODP* dalam radius {radius}m dari lokasi Anda:\n"
+        f"📍 *{lat}, {lng}*\n\n"
+        f"*ODP Terdekat:*\n{format_odp_list(nearby_odps)}\n\n"
+        f"📊 Menampilkan peta..."
+    )
+    
+    # Edit pesan tunggu
+    bot.edit_message_text(result_text, message.chat.id, wait_msg.message_id, parse_mode='Markdown')
+    
+    # Buat dan kirim peta dengan citra satelit dan rute
+    map_file = create_odp_map(lat, lng, nearby_odps, radius, with_routes=True, use_satellite=True)
+    
+    if map_file:
+        caption = f"🗺️ Peta satelit {len(nearby_odps)} ODP dalam radius {radius}m dari lokasi Anda dengan rute"
+        with open(map_file, 'rb') as photo:
+            bot.send_photo(message.chat.id, photo, caption=caption)
+            
+        # Tambahkan opsi untuk melihat peta jalan juga
+        keyboard = types.InlineKeyboardMarkup()
+        btn_street = types.InlineKeyboardButton(text="🗺️ Lihat Peta Jalan", callback_data=f"street_{lat}_{lng}_{radius}")
+        btn_satellite_no_route = types.InlineKeyboardButton(text="🛰️ Satelit Tanpa Rute", callback_data=f"sat_noroute_{lat}_{lng}_{radius}")
+        keyboard.add(btn_street, btn_satellite_no_route)
+        
+        bot.send_message(message.chat.id, "Opsi tampilan peta lainnya:", reply_markup=keyboard)
+    else:
+        bot.send_message(message.chat.id, "❌ Gagal membuat peta ODP.")
+
+@bot.callback_query_handler(func=lambda call: True)
+def handle_callback(call):
+    """Tangani callback dari tombol inline."""
+    try:
+        # Ekstrak data dari callback
+        data = call.data
+        
+        if data.startswith("street_") or data.startswith("sat_noroute_") or data.startswith("satellite_"):
+            # Format: "type_lat_lng_radius"
+            parts = data.split("_")
+            map_type = parts[0]
+            lat = float(parts[1])
+            lng = float(parts[2])
+            radius = int(parts[3])
+            
+            # Kirim notifikasi "sedang memproses"
+            bot.answer_callback_query(
+                call.id, 
+                text="Memproses permintaan peta...", 
+                show_alert=False
+            )
+            
+            # Pesan sesuai jenis peta yang diminta
+            peta_msg = "jalan" if map_type == "street" else "satelit tanpa rute"
+            if map_type == "satellite":
+                peta_msg = "satelit dengan detail jalan & bangunan"
+            
+            # Kirim pesan "sedang membuat peta"
+            wait_msg = bot.send_message(
+                call.message.chat.id, 
+                f"🔄 Membuat peta {peta_msg}..."
+            )
+            
+            # Muat data jika belum dimuat
+            if spreadsheet_data is None:
+                load_spreadsheet_data()
+                
+            # Cari ODP terdekat
+            nearby_odps = find_nearby_odps(lat, lng, radius)
+            
+            if nearby_odps is None or nearby_odps.empty:
+                bot.edit_message_text(
+                    "❌ Terjadi error saat mencari ODP.",
+                    call.message.chat.id, 
+                    wait_msg.message_id
+                )
+                return
+                
+            # Buat peta sesuai dengan tipe yang diminta
+            if map_type == "street":
+                # Peta jalan (OpenStreetMap)
+                map_file = create_odp_map(lat, lng, nearby_odps, radius, with_routes=True, use_satellite=False)
+                caption = f"🗺️ Peta jalan {len(nearby_odps)} ODP dalam radius {radius}m dengan rute"
+            elif map_type == "sat_noroute":
+                # Peta satelit tanpa rute
+                map_file = create_odp_map(lat, lng, nearby_odps, radius, with_routes=False, use_satellite=True)
+                caption = f"🛰️ Peta satelit {len(nearby_odps)} ODP dalam radius {radius}m tanpa rute"
+            elif map_type == "satellite":
+                # Peta satelit Google Hybrid (dengan jalan dan bangunan) dengan rute
+                map_file = create_odp_map(lat, lng, nearby_odps, radius, with_routes=True, use_satellite=True)
+                caption = f"🏘️ Peta satelit {len(nearby_odps)} ODP dalam radius {radius}m dengan jalan & bangunan"
+                
+            if map_file:
+                # Hapus pesan tunggu
+                bot.delete_message(call.message.chat.id, wait_msg.message_id)
+                
+                # Kirim gambar peta
+                with open(map_file, 'rb') as photo:
+                    bot.send_photo(call.message.chat.id, photo, caption=caption)
+            else:
+                bot.edit_message_text(
+                    "❌ Gagal membuat peta ODP.", 
+                    call.message.chat.id, 
+                    wait_msg.message_id
+                )
+        
+    except Exception as e:
+        logger.error(f"Error saat menangani callback: {e}")
+        bot.answer_callback_query(
+            call.id, 
+            text="Terjadi error saat memproses permintaan.", 
+            show_alert=True
+        )
+
+@bot.message_handler(func=lambda message: True)
+def handle_text(message):
+    """Tangani semua pesan teks lainnya."""
+    text = message.text.strip()
+    
+    # Coba parse teks sebagai koordinat
+    coord_pattern = r'(-?\d+\.\d+)[,\s]+(-?\d+\.\d+)'
+    match = re.search(coord_pattern, text)
+    
+    if match:
+        lat = float(match.group(1))
+        lng = float(match.group(2))
+        radius = DEFAULT_RADIUS  # Default
+        
+        # Kirim pesan "sedang mencari"
+        wait_msg = bot.send_message(message.chat.id, f"🔍 Mencari ODP dalam radius {radius}m dari koordinat {lat}, {lng}...")
+        
+        # Muat data jika belum dimuat
+        if spreadsheet_data is None:
+            load_spreadsheet_data()
+            
+        # Cari ODP terdekat
+        nearby_odps = find_nearby_odps(lat, lng, radius)
+        
+        if nearby_odps is None:
+            bot.edit_message_text("❌ Terjadi error saat mencari ODP.", message.chat.id, wait_msg.message_id)
+            return
+            
+        if nearby_odps.empty:
+            bot.edit_message_text(f"❌ Tidak ditemukan ODP dalam radius {radius}m dari koordinat {lat}, {lng}.", 
+                              message.chat.id, wait_msg.message_id)
+            return
+            
+        # Format hasil pencarian
+        result_text = (
+            f"✅ *Ditemukan {len(nearby_odps)} ODP* dalam radius {radius}m dari koordinat:\n"
+            f"📍 *{lat}, {lng}*\n\n"
+            f"*ODP Terdekat:*\n{format_odp_list(nearby_odps)}\n\n"
+            f"📊 Menampilkan peta..."
+        )
+        
+        # Edit pesan tunggu
+        bot.edit_message_text(result_text, message.chat.id, wait_msg.message_id, parse_mode='Markdown')
+        
+        # Buat dan kirim peta dengan citra satelit dan rute
+        map_file = create_odp_map(lat, lng, nearby_odps, radius, with_routes=True, use_satellite=True)
+        
+        if map_file:
+            caption = f"🗺️ Peta satelit {len(nearby_odps)} ODP dalam radius {radius}m dengan rute"
+            with open(map_file, 'rb') as photo:
+                bot.send_photo(message.chat.id, photo, caption=caption)
+                
+            # Tambahkan opsi untuk melihat peta jalan juga
+            keyboard = types.InlineKeyboardMarkup()
+            btn_street = types.InlineKeyboardButton(text="🗺️ Lihat Peta Jalan", callback_data=f"street_{lat}_{lng}_{radius}")
+            btn_satellite_no_route = types.InlineKeyboardButton(text="🛰️ Satelit Tanpa Rute", callback_data=f"sat_noroute_{lat}_{lng}_{radius}")
+            keyboard.add(btn_street, btn_satellite_no_route)
+            
+            bot.send_message(message.chat.id, "Opsi tampilan peta lainnya:", reply_markup=keyboard)
+        else:
+            bot.send_message(message.chat.id, "❌ Gagal membuat peta ODP.")
+    else:
+        # Tidak mengenali format teks
+        bot.reply_to(message, 
+                    "Saya tidak mengenali format tersebut.\n\n"
+                    "Kirim koordinat dengan format: `-3.292481, 114.592482`\n"
+                    "Atau gunakan perintah /help untuk bantuan.")
+
+def main():
+    logger.info("Bot Telegram ODP mulai berjalan...")
+    
+    # Muat data spreadsheet saat mulai
+    load_spreadsheet_data()
+    
+    # Jalankan bot
+    bot.infinity_polling()
+
+if __name__ == "__main__":
+    main()
